@@ -14,7 +14,7 @@ class CategoryItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final padding = MediaQuery.of(context).padding;
+    // final padding = MediaQuery.of(context).padding;
     return InkWell(
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
@@ -39,8 +39,9 @@ class CategoryItem extends StatelessWidget{
                   ),
                   padding: EdgeInsets.all(size.height*0.015),
                   child: Icon(
-                    Icons.category,
+                    Icons.category_outlined,
                     size: size.height*0.02,
+                    color: state?Colors.white:Colors.black,
                   ),
                 ),
                 SizedBox(

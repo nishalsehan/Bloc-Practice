@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../widgets/all_games_widget/all_games.dart';
 import '../widgets/category_widget/category_barrel.dart';
 
 class Dashboard extends StatelessWidget{
@@ -17,6 +18,7 @@ class Dashboard extends StatelessWidget{
           height: padding.top + size.height*0.05,
         ),
         const CategoriesWidget(),
+        const AllGamesWidget(),
       ],
     );
   }

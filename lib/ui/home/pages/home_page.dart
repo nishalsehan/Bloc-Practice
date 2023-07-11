@@ -1,6 +1,8 @@
 
 import 'package:bloc_practice/repositories/services/game_service.dart';
 import 'package:bloc_practice/repositories/store_repository.dart';
+import 'package:bloc_practice/ui/home/widgets/all_games_widget/bloc/all_games_bloc.dart';
+import 'package:bloc_practice/ui/home/widgets/all_games_widget/bloc/all_games_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,6 +23,12 @@ class HomePage extends StatelessWidget{
                 gameRepository: context.read<GameRepository>(),
               )..add(GetCategories()),
             ),
+            
+            BlocProvider<AllGamesBloc>(
+                create: (context) => AllGamesBloc(
+                    gameRepository: context.read<GameRepository>(),
+                )..add(GetAllGames())
+            )
           ],
           child: const Dashboard(),
         ),
