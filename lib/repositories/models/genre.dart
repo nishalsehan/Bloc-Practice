@@ -3,7 +3,7 @@
 import 'game.dart';
 
 class Genre {
-  int? id;
+  int id = 0;
   String? name;
   String? slug;
   int? gamesCount;
@@ -11,7 +11,7 @@ class Genre {
   List<Game>? games;
 
   Genre(
-      {this.id,
+      this.id,{
         this.name,
         this.slug,
         this.gamesCount,

@@ -30,7 +30,7 @@ class GameService {
     final response =  await _httpClient.get(getUrl(url:"games"));
     if(response.statusCode == 200){
       if(response.body.isNotEmpty){
-        List list = jsonDecode(response.body)['result'];
+        List list = jsonDecode(response.body)['results'];
         return ResponseData(data: list.map((e) => Game.fromJson(e)).toList(),true);
       }else{
         return ResponseData(false,error: "No data available");
@@ -44,7 +44,7 @@ class GameService {
     final response =  await _httpClient.get(getUrl(url:"genres"));
     if(response.statusCode == 200){
       if(response.body.isNotEmpty){
-        List list = jsonDecode(response.body)['result'];
+        List list = jsonDecode(response.body)['results'];
         return ResponseData(data: list.map((e) => Genre.fromJson(e)).toList(), true);
       }else{
         return ResponseData(false,error: "No data available");
@@ -63,7 +63,7 @@ class GameService {
     ));
     if(response.statusCode == 200){
       if(response.body.isNotEmpty){
-        List list = jsonDecode(response.body)['result'];
+        List list = jsonDecode(response.body)['results'];
         return ResponseData(true,data: list.map((e) => Game.fromJson(e)).toList());
       }else{
         return ResponseData(false,error: "No data available");

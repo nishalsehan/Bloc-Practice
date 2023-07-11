@@ -13,7 +13,7 @@ class CategoriesWidget extends StatelessWidget{
     return BlocBuilder<CategoryBloc, CategoryState>(
         buildWhen: (previous, current) => current.status.isSuccess,
         builder: (context, state) {
-          return CategoriesSuccessWidget();
+          return const CategoriesSuccessWidget();
         },
     );
   }

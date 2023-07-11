@@ -10,13 +10,12 @@ class CategoryEvent extends Equatable{
 
 class GetCategories extends CategoryEvent{}
 
-class SelectCategory extends CategoryEvent{
-
-  final int categoryId;
-
-  SelectCategory({required this.categoryId});
+class SelectCategory extends CategoryEvent {
+  SelectCategory({
+    required this.idSelected,
+  });
+  final int idSelected;
 
   @override
-  // TODO: implement props
-  List<Object?> get props => [categoryId];
+  List<Object?> get props => [idSelected];
 }
